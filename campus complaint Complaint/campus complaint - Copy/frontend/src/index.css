@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    @apply bg-[#f0f0f3] dark:bg-[#1a1b1e] text-gray-800 dark:text-gray-200 antialiased selection:bg-purple-500/30 transition-colors duration-300;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .linear-card {
+    @apply bg-[#f0f0f3] dark:bg-[#1a1b1e] border-none shadow-[8px_8px_16px_#d1d5df,-8px_-8px_16px_#ffffff] dark:shadow-[6px_6px_12px_#111113,-6px_-6px_12px_#232529] rounded-[2rem] transition-all duration-300;
+  }
+  
+  .linear-card-purple {
+    @apply bg-gradient-to-br from-[#e9d5ff] to-[#d8b4fe] dark:from-[#6b21a8] dark:to-[#4c1d95] border-none shadow-[8px_8px_16px_#d1d5df,-8px_-8px_16px_#ffffff] dark:shadow-[6px_6px_12px_#111113,-6px_-6px_12px_#232529] rounded-[2rem] transition-all duration-300 text-purple-900 dark:text-purple-100;
+  }
+  
+  .linear-button {
+    @apply bg-[#f0f0f3] dark:bg-[#1a1b1e] text-purple-600 dark:text-purple-400 transition-all duration-300 shadow-[6px_6px_12px_#d1d5df,-6px_-6px_12px_#ffffff] dark:shadow-[4px_4px_8px_#111113,-4px_-4px_8px_#232529] hover:shadow-[inset_4px_4px_8px_#d1d5df,inset_-4px_-4px_8px_#ffffff] dark:hover:shadow-[inset_4px_4px_8px_#111113,inset_-4px_-4px_8px_#232529] rounded-full font-bold px-8 py-3 border-none;
+  }
+  
+  .linear-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-fuchsia-500;
+  }
+  
+  .linear-primary-button {
+    @apply bg-gradient-to-r from-[#c084fc] to-[#a855f7] hover:from-[#d8b4fe] hover:to-[#c084fc] text-white shadow-[6px_6px_12px_#d1d5df,-6px_-6px_12px_#ffffff] dark:shadow-[4px_4px_8px_#111113,-4px_-4px_8px_#232529] rounded-full font-extrabold tracking-wide uppercase text-sm px-8 py-4 border-none transition-all duration-300 hover:scale-[1.02];
+  }
+  
+  .linear-input {
+    @apply bg-[#f0f0f3] dark:bg-[#1a1b1e] border-none text-gray-700 dark:text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 rounded-full p-4 w-full shadow-[inset_6px_6px_12px_#d1d5df,inset_-6px_-6px_12px_#ffffff] dark:shadow-[inset_4px_4px_8px_#111113,inset_-4px_-4px_8px_#232529] transition-all duration-300;
+  }
+  
+  .neumorph-slider {
+    @apply appearance-none w-full h-4 rounded-full bg-[#f0f0f3] dark:bg-[#1a1b1e] shadow-[inset_4px_4px_8px_#d1d5df,inset_-4px_-4px_8px_#ffffff] dark:shadow-[inset_4px_4px_8px_#111113,inset_-4px_-4px_8px_#232529] outline-none my-4;
+  }
+  
+  .neumorph-slider::-webkit-slider-thumb {
+    @apply appearance-none w-8 h-8 rounded-full bg-gradient-to-r from-[#c084fc] to-[#a855f7] cursor-pointer shadow-[2px_2px_5px_#d1d5df,-2px_-2px_5px_#ffffff] dark:shadow-[2px_2px_5px_#111113,-2px_-2px_5px_#232529] hover:scale-110 transition-transform;
+  }
+}
